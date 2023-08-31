@@ -1,7 +1,7 @@
 <template>
-    <p class= "text-green-600 font-semibold font-lg underline" v-if="reactionTime>0">Your response time is {{ reactionTime }}</p>
+    <p class= "text-teal-600 mt-8 font-semibold font-lg underline" v-if="reactionTime>0">Your response time is <span class="text-4xl">{{ reactionTime }}</span>ms</p>
     <p v-if="!showBlock"
-        class="mt-12 cursor-pointer font-semibold w-[400px] rounded-xl border-2 border-teal-600 bg-transparent text-black text-center p-[100px] m-auto">
+        class="mt-12 cursor-pointer font-semibold w-[400px] rounded-xl border-2 border-teal-600 bg-transparent text-teal-600 text-center p-[100px] m-auto">
         click the block asap it appears</p>
     <div v-if="showBlock" @click="stopTimer"
         class="mt-12 text-xl cursor-pointer font-semibold w-[400px] rounded-xl bg-teal-600 text-white text-center p-[100px] m-auto">

@@ -1,7 +1,7 @@
 <template>
   <h1 class="text-6xl font-bold">Reaction Timer</h1>
   <button @click="start" v-if="!isPlaying"
-    class="text-white mt-8 bg-purple-700 hover:bg-purple-800 focus:outline-none active:bg-purple-900 font-medium rounded-full text-sm px-8 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">Start</button>
+    class="text-white mt-8 bg-teal-600 hover:bg-teal-700 focus:outline-none active:bg-teal-800 font-medium rounded-full text-sm px-8 py-2.5 text-center mb-2 dark:bg-teal-600 dark:hover:bg-teal-600 dark:focus:ring-teal-800">Start</button>
   <Block v-if="isPlaying" :delay="delay"/>
 </template>
 
