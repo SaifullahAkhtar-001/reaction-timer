@@ -27,7 +27,7 @@ export default {
     methods: {
         startTimer() {
             this.timer = setInterval(() => {
-                this.reactionTime += 10
+                this.reactionTime += 11
             }, 10)
         },
         stopTimer() {
