@@ -3,7 +3,8 @@
     <h1 class="text-6xl dark:text-teal-600 font-bold">Reaction Timer</h1>
     <button @click="start" v-if="!isPlaying"
       class="text-white mt-8 bg-teal-600 hover:bg-teal-700 focus:outline-none active:bg-teal-800 font-medium rounded-full text-sm px-8 py-2.5 text-center mb-2 dark:bg-teal-600 dark:hover:bg-teal-600 dark:focus:ring-teal-800">Start</button>
-    <Block v-if="isPlaying" :delay="delay" />
+    <Block v-if="isPlaying" :delay="delay" @end="endGame"/>
+    <p class= "text-teal-600 mt-8 font-semibold font-lg underline" v-if="showResult">Your response time is <span class="text-4xl">{{ score }}</span>ms</p>
   </div>
 </template>
 
@@ -20,12 +21,20 @@ export default {
     return {
       isPlaying: false,
       delay: null,
+      score: 0,
+      showResult: false,
     }
   },
   methods: {
     start() {
       this.isPlaying = true
       this.delay = 2000 + Math.random() * 5000
+      this.showResult = false
+    },
+    endGame(reactionTime) {
+      this.score = reactionTime
+      this.isPlaying = false
+      this.showResult = true
     }
   }
 }
